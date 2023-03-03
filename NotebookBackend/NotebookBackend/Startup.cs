@@ -21,6 +21,17 @@ internal class Startup
         services.AddScoped<IRepository<Note>, NoteRepository>();
         services.AddControllers();
 
+        services.AddCors(setup =>
+        {
+            setup.AddDefaultPolicy(policy =>
+            {
+                policy
+                    .WithOrigins("http://localhost:3000")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            });
+        });
+
         var connectionString = Configuration.GetConnectionString("Database") ?? throw new NullReferenceException();
         services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(connectionString));
     }
@@ -28,6 +39,7 @@ internal class Startup
     public void Configure(IApplicationBuilder app)
     {
         app.UseRouting();
+        app.UseCors();
         app.UseEndpoints(endpoints => endpoints.MapDefaultControllerRoute());
     }
 }

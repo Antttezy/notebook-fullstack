@@ -1,0 +1,7 @@
+.noteList {
+    margin: 0 auto;
+}
+
+.noteList > ul {
+    list-style-type: none;
+}

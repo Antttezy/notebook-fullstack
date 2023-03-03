@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital@1&display=swap');
+
+.note {
+    display: block;
+    width: 400px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0px 10px 0 #00000077;
+    padding: 5px 10px 10px 10px;
+}
+
+.note > .noteHeader {
+    text-align: center;
+    margin: 5px;
+}
+
+.note > .noteContent {
+    font-size: 10pt;
+    color: gray;
+}
+
+.note > p {
+    font-family: 'Shantell Sans', cursive;
+}
+
+.noteDelete {
+    float: right;
+    margin: 10px;
+    padding: 5px 10px;
+    background-color: rgb(223, 0, 0);
+    border-radius: 5px;
+    border: none;
+}
+
+.noteDelete:hover {
+    background-color: rgb(170, 0, 0);
+}
